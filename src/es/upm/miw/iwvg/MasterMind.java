@@ -4,28 +4,27 @@ public class MasterMind {
 		
 	private ObtenerJuegoController obtenerJuegoController;	
 	private ContinuaController continuaController;
-	private FinPartidaController finPartidaController;
-	private Juego tipoJuego;	
+	private PedirIntentoController finPartidaController;
+	private Logica logic;	
 	
 	public MasterMind() {
-		this.obtenerJuegoController = new ObtenerJuegoController();
-		this.finPartidaController = new FinPartidaController();
-		this.continuaController = new ContinuaController();
+//		this.obtenerJuegoController = new ObtenerJuegoController(tipoJuego);
+//		this.finPartidaController = new FinPartidaController();
+//		this.continuaController = new ContinuaController();
+		this.logic = new Logica();
 	}
 	
 	public void start() {				
 		
-		do {
-			this.tipoJuego = this.obtenerJuegoController.dameTipoJuego();	
-			boolean victoria = this.tipoJuego.play();
+		Controller controller;
+		do {			
 			
-			if (victoria) {
-				finPartidaController.felicita();
-			}else {
-				finPartidaController.anima();
-			}
+			controller = logic.getController();
+			if (controller != null) {
+				controller.control();
+			}			
 			
-		}while (continuaController.preguntarSicontinua());								
+		}while (controller!= null);								
 		
 	}	
 

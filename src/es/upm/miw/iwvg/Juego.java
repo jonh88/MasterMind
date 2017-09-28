@@ -8,13 +8,26 @@ public abstract class Juego {
 	private Tablero tablero;		
 	private static final int LONGITUDCODIGO = 4;
 	private static final int NUMERO_INTENTOS = 2;
+	State state;
 	
 	public Juego() {
 				
 		this.tablero = new Tablero(this.generarCodigoAleatorio());
 		
 	}
-	
+		
+	public Tablero getTablero() {
+		return tablero;
+	}
+
+	public State getState() {
+		return state;
+	}
+		
+	public void setState(State state) {
+		this.state = state;
+	}
+
 	protected Color[] generarCodigoAleatorio() {
 					
 		Color colores[] = Color.values();
@@ -28,7 +41,7 @@ public abstract class Juego {
 		return codigoAleatorio;		
 	}	
 	
-	public boolean play() {
+	public void play() {
 		
 		Io comunicador = new Io();
 		int jugada = 0;
@@ -41,8 +54,7 @@ public abstract class Juego {
 			jugada++;
 			
 		}
-		
-		return this.tablero.isVictoria();		
+					
 	}
 	
 	public void pintaCodigoSecreto() {

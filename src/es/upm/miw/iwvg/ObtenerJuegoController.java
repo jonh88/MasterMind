@@ -2,13 +2,21 @@ package es.upm.miw.iwvg;
 
 import es.upm.miw.iwvg.utils.Io;
 
-public class ObtenerJuegoController {		
+public class ObtenerJuegoController extends Controller {
 	
-	public ObtenerJuegoController () {
-		
+	Juego juego;
+	
+	public ObtenerJuegoController (Juego juego) {
+		super(juego);
 	}
 	
-	public Juego dameTipoJuego() {
+	public Juego getJuego() {
+		return juego;
+	}
+
+	@Override
+	public void control() {
+		
 		Io comunicador = new Io();
 		
 		comunicador.escribeMensaje("********** BIENVENIDO A MASTERMIND **********");
@@ -21,12 +29,14 @@ public class ObtenerJuegoController {
 		if (entradaUsuario.equals("1")) {
 			Partida nuevaPartida = new Partida();
 			comunicador.escribeMensaje("Secreto: ****");
-			return nuevaPartida;
+			this.juego = nuevaPartida;
 		}else {
 			Demo nuevaDemo = new Demo();
 			comunicador.escribeMensaje("Secreto: ****");
-			return nuevaDemo;
-		}				
+			this.juego = nuevaDemo;
+		}
+		
+		this.setState(State.JUGANDO);
 		
 	}
 

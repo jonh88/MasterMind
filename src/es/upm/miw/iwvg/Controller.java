@@ -13,11 +13,11 @@ public abstract class Controller {
 	public abstract void control();
 	
 	protected State getState() {
-		return jugada.getState();
+		return juego.getState();
 	}
 	
 	protected void setState(State state) {
 		assert state != null;
-		this.jugada.setState(state);
+		this.juego.setState(state);
 	}
 }

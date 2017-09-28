@@ -2,25 +2,26 @@ package es.upm.miw.iwvg;
 
 import es.upm.miw.iwvg.utils.Io;
 
-public class ContinuaController {
+public class ContinuaController extends Controller{
 	
-	public ContinuaController() {
-		
+	Juego juego;
+	
+	public ContinuaController(Juego juego) {
+		super(juego);
 	}
 	
-	public boolean preguntarSicontinua() {
+	@Override
+	public void control() {
 		Io comunicador = new Io();
 		
 		comunicador.escribeMensaje("¿Desea continuar jugando? (yes/no)");		
 		String respuesta = comunicador.leer();
 					
 		if (respuesta.equals("yes")||respuesta.equals("y")) {
-			return true;
+			this.juego.setState(State.PIDIENDO_JUEGO);
 		}else if (respuesta.equals("no")||respuesta.equals("n")) {
-			return false;
-		}else {
-			return false;
-		}		
+			this.juego.setState(State.FIN_JUEGO);
+		}
 		
 	}
 
