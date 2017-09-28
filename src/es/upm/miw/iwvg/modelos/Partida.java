@@ -1,4 +1,4 @@
-package es.upm.miw.iwvg;
+package es.upm.miw.iwvg.modelos;
 
 import es.upm.miw.iwvg.utils.Io;
 

@@ -1,6 +1,7 @@
-package es.upm.miw.iwvg;
+package es.upm.miw.iwvg.modelos;
 
 import java.util.Random;
+
 import es.upm.miw.iwvg.utils.Io;
 
 public abstract class Juego {

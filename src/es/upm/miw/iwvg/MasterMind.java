@@ -1,5 +1,11 @@
 package es.upm.miw.iwvg;
 
+import es.upm.miw.iwvg.controllers.ContinuaController;
+import es.upm.miw.iwvg.controllers.Controller;
+import es.upm.miw.iwvg.controllers.Logica;
+import es.upm.miw.iwvg.controllers.ObtenerJuegoController;
+import es.upm.miw.iwvg.controllers.PedirIntentoController;
+
 public class MasterMind {
 		
 	private ObtenerJuegoController obtenerJuegoController;	

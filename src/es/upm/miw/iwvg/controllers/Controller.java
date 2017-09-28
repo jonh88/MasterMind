@@ -1,4 +1,7 @@
-package es.upm.miw.iwvg;
+package es.upm.miw.iwvg.controllers;
+
+import es.upm.miw.iwvg.modelos.Juego;
+import es.upm.miw.iwvg.modelos.State;
 
 public abstract class Controller {
 	

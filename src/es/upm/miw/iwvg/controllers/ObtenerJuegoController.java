@@ -1,5 +1,9 @@
-package es.upm.miw.iwvg;
+package es.upm.miw.iwvg.controllers;
 
+import es.upm.miw.iwvg.modelos.Demo;
+import es.upm.miw.iwvg.modelos.Juego;
+import es.upm.miw.iwvg.modelos.Partida;
+import es.upm.miw.iwvg.modelos.State;
 import es.upm.miw.iwvg.utils.Io;
 
 public class ObtenerJuegoController extends Controller {
