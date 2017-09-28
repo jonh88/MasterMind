@@ -1,10 +1,10 @@
 package es.upm.miw.iwvg.controllers;
 
-import es.upm.miw.iwvg.modelos.Juego;
+import es.upm.miw.iwvg.modelos.Game;
 
 public class Logica {
 		
-	private Juego juego;
+	private Game game;
 	
 	ObtenerJuegoController obtenerJuegoController;
 	
@@ -13,14 +13,14 @@ public class Logica {
 	ContinuaController continuaController;
 	
 	public Logica () {
-		this.obtenerJuegoController = new ObtenerJuegoController(this.juego);
-		this.juego = obtenerJuegoController.getJuego();
-		this.pedirIntentoController = new PedirIntentoController(this.juego);
-		this.continuaController = new ContinuaController(this.juego);			
+		this.game = new Game();
+		this.obtenerJuegoController = new ObtenerJuegoController(this.game);		
+		this.pedirIntentoController = new PedirIntentoController(this.game);
+		this.continuaController = new ContinuaController(this.game);			
 	}
 	
 	public Controller getController() {
-		switch(juego.getState()) {
+		switch(this.game.getState()) {
 		case PIDIENDO_JUEGO:
 			return this.obtenerJuegoController;			
 		case JUGANDO:

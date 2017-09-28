@@ -1,26 +1,34 @@
 package es.upm.miw.iwvg.controllers;
 
-import es.upm.miw.iwvg.modelos.Juego;
+import es.upm.miw.iwvg.modelos.Game;
 import es.upm.miw.iwvg.modelos.State;
 
 public abstract class Controller {
 	
-	private Juego juego;	
+	private Game game;		
 	
-	
-	protected Controller(Juego juego) {
-		assert juego != null;
-		this.juego = juego;
+	protected Controller(Game game) {
+		assert game != null;
+		this.game = game;
 	}
 	
 	public abstract void control();
 	
 	protected State getState() {
-		return juego.getState();
+		return this.game.getState();
 	}
 	
 	protected void setState(State state) {
 		assert state != null;
-		this.juego.setState(state);
+		this.game.setState(state);
 	}
+
+	public Game getGame() {
+		return game;
+	}
+
+	public void setGame(Game game) {
+		this.game = game;
+	}
+		
 }

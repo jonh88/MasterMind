@@ -1,15 +1,13 @@
 package es.upm.miw.iwvg.controllers;
 
-import es.upm.miw.iwvg.modelos.Juego;
+import es.upm.miw.iwvg.modelos.Game;
 import es.upm.miw.iwvg.modelos.State;
 import es.upm.miw.iwvg.utils.Io;
 
 public class ContinuaController extends Controller{
 	
-	Juego juego;
-	
-	public ContinuaController(Juego juego) {
-		super(juego);
+	public ContinuaController(Game game) {
+		super(game);
 	}
 	
 	@Override
@@ -20,9 +18,9 @@ public class ContinuaController extends Controller{
 		String respuesta = comunicador.leer();
 					
 		if (respuesta.equals("yes")||respuesta.equals("y")) {
-			this.juego.setState(State.PIDIENDO_JUEGO);
+			this.getGame().setState(State.PIDIENDO_JUEGO);
 		}else if (respuesta.equals("no")||respuesta.equals("n")) {
-			this.juego.setState(State.FIN_JUEGO);
+			this.getGame().setState(State.FIN_JUEGO);
 		}
 		
 	}

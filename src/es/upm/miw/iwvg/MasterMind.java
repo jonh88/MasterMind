@@ -14,9 +14,6 @@ public class MasterMind {
 	private Logica logic;	
 	
 	public MasterMind() {
-//		this.obtenerJuegoController = new ObtenerJuegoController(tipoJuego);
-//		this.finPartidaController = new FinPartidaController();
-//		this.continuaController = new ContinuaController();
 		this.logic = new Logica();
 	}
 	
