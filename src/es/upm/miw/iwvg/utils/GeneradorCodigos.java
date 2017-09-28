@@ -18,8 +18,10 @@ public class GeneradorCodigos {
 		Color codigoAleatorio[] = new Color[LONGITUDCODIGO];
 		Random generadorNumeroAleatorio = new Random();
 		for (int i=0; i< LONGITUDCODIGO; i++) {
-		int numAleatorio = generadorNumeroAleatorio.nextInt(Color.NUMCOLORES) +1;
-		codigoAleatorio[i]= colores[numAleatorio-1];			
+			
+			int numAleatorio = generadorNumeroAleatorio.nextInt(Color.NUMCOLORES) +1;
+			codigoAleatorio[i]= colores[numAleatorio-1];
+			
 		}			
 		
 		return codigoAleatorio;		
