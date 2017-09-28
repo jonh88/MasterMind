@@ -30,5 +30,9 @@ public class MasterMind {
 		}while (controller!= null);								
 		
 	}	
+	
+	public static void main(String[] args) {
+		new MasterMind().start();
+	}
 
 }
